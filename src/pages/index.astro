@@ -1,8 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import '../lib/Prototypes.ts'
 ---
 
-<Layout title="Welcome to Astro.">
-	<h1>Hello world</h1>
+<Layout title="DataValidation library - home">
+	<h1>Data Validation</h1>
+	<p>Now easier than ever!</p>
+
+	<h2>Quick guide!</h2>
+	<pre><code class="language-js">
+// import it
+import 'https://cdn.jsdelivr.net/gh/jorgeabrahan/Validations@3aa7478/public/dataValidation.js'
+
+// try it out
+console.log('Hello world!'.isEmpty()) // should print false in console
+	</code></pre>
+	<h3>That's it, you're done with the setup!</h3>
+	<a href="methods-list">Methods list</a>
 </Layout>
