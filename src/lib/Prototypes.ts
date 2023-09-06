@@ -23,6 +23,7 @@ declare global {
     hasComplexFormat: (formats: Array<FormatObject>) => boolean
     countOccurrences: (chars: string) => number | Array<number>
 
+    toSingleSpaced: () => string
     removeChars: (charsToRemove: string, justOnce?: boolean) => string
     removeWord: (wordToRemove: string, justOnce?: boolean) => string
     removeRepeatedChars: () => string
@@ -96,6 +97,9 @@ String.prototype.hasComplexFormat = function (formats) {
 }
 String.prototype.countOccurrences = function (chars) {
   return sv.countOccurrences(this.toString(), chars)
+}
+String.prototype.toSingleSpaced = function () {
+  return sv.toSingleSpaced(this.toString())
 }
 String.prototype.removeChars = function (charsToRemove, justOnce = false) {
   return sv.removeChars(this.toString(), charsToRemove, justOnce)
