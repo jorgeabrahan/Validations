@@ -205,6 +205,9 @@ class StringValidation {
     if (occurrences.length === 1) return occurrences[0]
     return occurrences
   }
+  toSingleSpaced(value: string): string {
+    return value.replace(/\s+/g, ' ')
+  }
   removeChars(value: string, charsToRemove: string, justOnce: boolean): string {
     let valueCopy = value
     for (let char of charsToRemove) {
