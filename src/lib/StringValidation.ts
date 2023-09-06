@@ -208,6 +208,18 @@ class StringValidation {
   toSingleSpaced(value: string): string {
     return value.replace(/\s+/g, ' ')
   }
+  toCapitalized(value: string): string {
+    const capitalizedWords: Array<string> = []
+    value.trim().toSingleSpaced().split(' ').forEach(word => capitalizedWords.push(`${word.slice(0,1).toUpperCase()}${word.slice(1).toLowerCase()}`))
+    return capitalizedWords.join(' ')
+  }
+  toCamelCase(value: string): string {
+    return value.toCapitalized().split(' ').join('')
+  }
+  toDromedaryCase(value: string): string {
+    const camelCaseValue = value.toCamelCase()
+    return `${camelCaseValue.slice(0,1).toLowerCase()}${camelCaseValue.slice(1)}`
+  }
   removeChars(value: string, charsToRemove: string, justOnce: boolean): string {
     let valueCopy = value
     for (let char of charsToRemove) {
