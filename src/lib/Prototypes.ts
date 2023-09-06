@@ -24,6 +24,9 @@ declare global {
     countOccurrences: (chars: string) => number | Array<number>
 
     toSingleSpaced: () => string
+    toCapitalized: () => string
+    toCamelCase: () => string
+    toDromedaryCase: () => string
     removeChars: (charsToRemove: string, justOnce?: boolean) => string
     removeWord: (wordToRemove: string, justOnce?: boolean) => string
     removeRepeatedChars: () => string
@@ -100,6 +103,15 @@ String.prototype.countOccurrences = function (chars) {
 }
 String.prototype.toSingleSpaced = function () {
   return sv.toSingleSpaced(this.toString())
+}
+String.prototype.toCapitalized = function () {
+  return sv.toCapitalized(this.toString())
+}
+String.prototype.toCamelCase = function () {
+  return sv.toCamelCase(this.toString())
+}
+String.prototype.toDromedaryCase = function () {
+  return sv.toDromedaryCase(this.toString())
 }
 String.prototype.removeChars = function (charsToRemove, justOnce = false) {
   return sv.removeChars(this.toString(), charsToRemove, justOnce)
